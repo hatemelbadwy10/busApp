@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:busapp/constants.dart';
+import 'package:busapp/core/services/facebook_auth_service.dart';
+import 'package:busapp/core/services/google_auth_services.dart';
 import 'package:busapp/core/utils/extentions.dart';
 import 'package:busapp/core/utils/styles.dart';
 import 'package:busapp/core/widgets/custom_app_button.dart';
@@ -9,6 +11,7 @@ import 'package:busapp/features/auth/presentation/sign_in_view/manger/sign_in_cu
 import 'package:busapp/features/auth/presentation/sign_in_view/view/sign_up_view.dart';
 import 'package:busapp/features/auth/presentation/sign_in_view/widgets/auth_text_field.dart';
 import 'package:busapp/features/auth/presentation/sign_in_view/widgets/have_account_check.dart';
+import 'package:busapp/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -168,7 +171,10 @@ class _SignInViewState extends State<SignInView> {
                       ),
                       const Gap(16),
                       CustomAppButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          locator<GoogleAuthServices>().signInWithGoogle();
+
+                        },
                         iconData: SvgPicture.asset(googleIcon),
                         buttonText: 'complete with google',
                         bgColor: Colors.white,
@@ -176,7 +182,9 @@ class _SignInViewState extends State<SignInView> {
                       ),
                       const Gap(15),
                       CustomAppButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          locator<FacebookAuthService>().loginWithFacebook();
+                        },
                         iconData: SvgPicture.asset(facebookIcon),
                         buttonText: 'complete with Facebook',
                         bgColor: Colors.white,

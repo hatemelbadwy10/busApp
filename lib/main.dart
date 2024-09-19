@@ -1,8 +1,10 @@
+import 'package:busapp/locator.dart';
 import 'package:flutter/material.dart';
 
 import 'features/splash_view/presentation/views/splash_view.dart';
 
-void main() {
+void main()async {
+  await setupLocator();
   runApp(const MyBus());
 }
 class MyBus extends StatelessWidget {

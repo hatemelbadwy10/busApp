@@ -31,6 +31,12 @@ dependencies:
   gap: ^3.0.1
   flutter_bloc: ^8.1.6
   flutter_svg: ^2.0.10+1
+  flutter_facebook_auth: ^7.0.0
+  get_it: ^7.7.0
+  google_sign_in: ^6.2.1
+
+
+
 
 
 
